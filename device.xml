@@ -1,0 +1,49 @@
+<NetworkDeviceConfig>
+    <Device>
+        <hostname>R1</hostname>
+        <Location>Datacenter</Location>
+        <Vendor>Cisco</Vendor>
+    </Device>
+
+    <Interface>
+        <Interfaces>
+            <Name>GigabitEthernet0/0</Name>
+            <Description>WAN-LINK</Description>
+            <IPAddress>192.168.10.1</IPAddress>
+            <Subnetmask>255.255.255.240</Subnetmask>
+            <Status>UP</Status>
+        </Interfaces>
+    </Interface>
+
+    <Interface>
+        <Interfaces>
+            <Name>GigabitEthernet0/1</Name>
+            <Description>Local</Description>
+            <IPAddress>192.168.20.1</IPAddress>
+            <Subnetmask>255.255.255.240</Subnetmask>
+            <Status>UP</Status>
+        </Interfaces>
+    </Interface>
+
+    <Routing>
+        <StaticRoutes>
+            <Routes>
+                <Destination>0.0.0.0</Destination>
+                <Mask>0.0.0.0</Mask>
+                <NextHop>192.168.10.2</NextHop>
+            </Routes>
+        </StaticRoutes>
+
+        <OSPF>
+            <ProcessID>10</ProcessID>
+            <RouterID>1.1.1.1</RouterID>
+            <Networks>
+                <Network>
+                    <IP>192.168.20.0</IP>
+                    <Wildcard>0.0.0.15</Wildcard>
+                    <Area>0</Area>
+                </Network>
+            </Networks>
+        </OSPF>
+    </Routing>
+</NetworkDeviceConfig>
